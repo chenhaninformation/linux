@@ -189,6 +189,15 @@
 					<GIC_SPI 153 IRQ_TYPE_LEVEL_HIGH>,
 					<GIC_SPI 154 IRQ_TYPE_LEVEL_HIGH>,
 					<GIC_SPI 155 IRQ_TYPE_LEVEL_HIGH>;
+
+					gpio-line-names = "I2C1_SCK", "I2C1_SDA", "I2C2_SCK", "I2C2_SDA", "SWI_SIO",
+						"", "PMIC0_SLP_OUT", "PMIC1_SLP_OUT", "", "UA2_RTSn",
+						"UA2_CTSn", "PWM[0]", "PWM[1]", "PWM[2]", "PWM[3]",
+						"SPI_WPn", "SPI_HOLDn", "SPI_CSn[1]", "SPI_CSn[2]", "SPI_CSn[3]",
+						"JT_TDO", "JT_TDI", "JT_TCLK", "JT_TMS", "JT_RSTn",
+						"UA1_TXD", "UA1_RXD", "MMC_D[2]", "MMC_D[3]", "MMC_D[4]",
+						"MMC_D[5]", "MMC_CMD", "MMC_D[6]", "MMC_D[7]", "MMC_D[0]",
+						"MMC_D[1]";
 				};
 
 				xtalclk: xtal-clk {
@@ -251,6 +260,13 @@
 					<GIC_SPI 158 IRQ_TYPE_LEVEL_HIGH>,
 					<GIC_SPI 157 IRQ_TYPE_LEVEL_HIGH>,
 					<GIC_SPI 156 IRQ_TYPE_LEVEL_HIGH>;
+
+					gpio-line-names = "USB2_DRVVBUS[0]", "USB2_DRVVBUS[1]", "", "PCIe_RESETn", "PCIe_CLKREQ",
+						"", "FE_TXCLK", "FE_TXD[0]", "FE_TXD[1]", "FE_TXD[2]",
+						"FE_TXD[3]", "FE_TXEN", "FE_RXCLK", "FE_RXD[3]", "FE_RXD[2]",
+						"FE_RXD[1]", "FE_RXD[0]", "FE_RXDV", "SMI_MDC", "SMI_MDIO",
+						"PTP_EVENT_REQ", "PTP_CLK", "PTP_TRIG_GEN", "FE_EXERR", "SD0_D[2]",
+						"SD0_D[3]", "SD0_D[1]", "SD0_D[0]", "SD0_CMD", "SD0_CLK";
 				};
 
 				rgmii_pins: mii-pins {
