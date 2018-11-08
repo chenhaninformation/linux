@@ -12,6 +12,7 @@
 
 /dts-v1/;
 
+#include <dt-bindings/input/linux-event-codes.h>
 #include <dt-bindings/gpio/gpio.h>
 #include "armada-372x.dtsi"
 
@@ -40,6 +41,15 @@
 		states = <1800000 0x1
 			  3300000 0x0>;
 		enable-active-high;
+	};
+
+	gpio-keys {
+		compatible = "gpio-keys";
+
+		reboot {
+			linux,code = <BTN_0>;
+			gpios = <&gpionb 16 GPIO_ACTIVE_LOW>;
+		};
 	};
 };
 
