@@ -48,7 +48,12 @@
 
 		reboot {
 			linux,code = <BTN_0>;
-			gpios = <&gpionb 16 GPIO_ACTIVE_LOW>;
+			gpios = <&gpionb 5 GPIO_ACTIVE_LOW>;
+		};
+
+		reset {
+			linux,code = <BTN_1>;
+			gpios = <&gpiosb 5 GPIO_ACTIVE_LOW>;
 		};
 	};
 };
