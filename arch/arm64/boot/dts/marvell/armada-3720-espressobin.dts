@@ -93,7 +93,7 @@
 
 	pinctrl-names = "default";
 	pinctrl-0 = <&mmc_pins>;
-	status = "okay";
+	status = "disable";
 };
 
 &spi0 {
