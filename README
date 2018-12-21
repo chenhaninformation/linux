@@ -1,19 +1,43 @@
-Linux kernel
-============
+This branch is for espressobin board and it is based on mainline Linux,
+tag v4.19, please refer to: https://github.com/torvalds/linux/tree/v4.19
 
-There are several guides for kernel developers and users. These guides can
-be rendered in a number of formats, like HTML and PDF. Please read
-Documentation/admin-guide/README.rst first.
+You can find documentation at the mainline Linux, we only provide some of
+the build steps and some note.
 
-In order to build the documentation, use ``make htmldocs`` or
-``make pdfdocs``.  The formatted documentation can also be read online at:
+Note
+====
 
-    https://www.kernel.org/doc/html/latest/
+1.We add a brand new defconfig file at arch/arm64/configs/, it is a copy of
+defconfig named espressobin_defconfig by disable some other platform configs,
+enable OverlayFS build-in by default and enable RAID support by default.
 
-There are various text files in the Documentation/ subdirectory,
-several of them using the Restructured Text markup notation.
-See Documentation/00-INDEX for a list of what is contained in each file.
+2.The linux kernel shold compile with ramfs cpio archive, which will mount an
+OverlayFS as root and switch to this OverlayFS from ramfs. More information
+please refer to https://github.com/chenhaninfomation/buildroot.
 
-Please read the Documentation/process/changes.rst file, as it contains the
-requirements for building and running the kernel, and information about
-the problems which may result by upgrading your kernel.
+Build Step
+==========
+
+Normal compile step are shown in follow:
+1.export CROSS_COMPILE=/path/to/aarch64/compiler
+2.export ARCH=arm64
+3.make defconfig
+4.make
+
+Due to new defconfig has been added, please use espressobin_defconfig instead
+of the old one:
+1.export CROSS_COMPILE=/path/to/aarch64/compiler
+2.export ARCH=arm64
+3.make espressobin_defconfig # Use espressobin_defconfig
+4.make
+
+More Information
+===============
+
+More information can be find here:
+http://wiki.espressobin.net/tiki-index.php?page=Build+From+Source+-+Kernel
+
+TODO
+====
+
+1.Note 2, add more information about ramfs and cpio, how to generate one etc.
