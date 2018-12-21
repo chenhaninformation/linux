@@ -112,12 +112,12 @@
 
 			partition@0 {
 				label = "uboot";
-				reg = <0 0x180000>;
+				reg = <0 0x3f0000>;
 			};
 
-			partition@180000 {
+			partition@3f0000 {
 				label = "ubootenv";
-				reg = <0x180000 0x10000>;
+				reg = <0x3f0000 0x10000>;
 			};
 		};
 	};
